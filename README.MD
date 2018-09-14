@@ -17,5 +17,8 @@ vendor/bin/phpunit tests --colors --testdox
 
 ### Api Documentation
 ```php
-    QualifiesForInsurance::__invoke(int $companyNumber, string $companyDirectorName): bool
+    InsuranceApp\QualifiesForInsurance::__invoke(
+        int $companyNumber, 
+        string $companyDirectorName
+    ): bool
 ```
