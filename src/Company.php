@@ -2,7 +2,7 @@
 
 namespace InsuranceApp;
 
-class Company
+final class Company
 {
     private $number;
 

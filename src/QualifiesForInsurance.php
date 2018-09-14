@@ -2,7 +2,7 @@
 
 namespace InsuranceApp;
 
-class QualifiesForInsurance
+final class QualifiesForInsurance
 {
     private $companyRepository;
 

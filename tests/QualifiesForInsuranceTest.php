@@ -9,7 +9,7 @@ use InvalidArgumentException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-class QualifiesForInsuranceTest extends TestCase
+final class QualifiesForInsuranceTest extends TestCase
 {
     /** @test */
     public function throws_exception_on_director_name_mismatch(): void
