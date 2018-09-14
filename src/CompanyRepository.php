@@ -4,5 +4,5 @@ namespace InsuranceApp;
 
 interface CompanyRepository
 {
-    public function get(int $companyNumber): Company;
+    public function getCompany(int $companyNumber): Company;
 }

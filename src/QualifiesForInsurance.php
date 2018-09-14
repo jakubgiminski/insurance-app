@@ -2,6 +2,8 @@
 
 namespace InsuranceApp;
 
+use InvalidArgumentException;
+
 final class QualifiesForInsurance
 {
     private $companyRepository;
@@ -13,10 +15,10 @@ final class QualifiesForInsurance
 
     public function __invoke(int $companyNumber, string $companyDirectorName): bool
     {
-        $company = $this->companyRepository->get($companyNumber);
+        $company = $this->companyRepository->getCompany($companyNumber);
 
         if ($company->getDirectorName() !== $companyDirectorName) {
-            throw new \InvalidArgumentException('Director name mismatch');
+            throw new InvalidArgumentException('Director name mismatch');
         }
 
         return $company->hasInsolvencyHistory() === false;
