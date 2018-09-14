@@ -9,10 +9,10 @@ use InvalidArgumentException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-final class QualifiesForInsuranceTest extends TestCase
+class QualifiesForInsuranceTest extends TestCase
 {
     /** @test */
-    public function throws_exception_on_director_name_mismatch(): void
+    public function throwsExceptionOnDirectorNameMismatch(): void
     {
         $companiesHouseApi = $this->mockCompanyRepository(
             new Company(123, 'Jon Doe', false)
@@ -24,7 +24,7 @@ final class QualifiesForInsuranceTest extends TestCase
     }
 
     /** @test */
-    public function returns_true_if_company_has_no_insolvency_history(): void
+    public function returnsTrueIfCompanyHasNoInsolvencyHistory(): void
     {
         $companiesHouseApi = $this->mockCompanyRepository(
             new Company(123, 'Jon Doe', false)
@@ -36,7 +36,7 @@ final class QualifiesForInsuranceTest extends TestCase
     }
 
     /** @test */
-    public function returns_false_if_company_has_insolvency_history(): void
+    public function returnsFalseIfCompanyHasInsolvencyHistory(): void
     {
         $companiesHouseApi = $this->mockCompanyRepository(
             new Company(123, 'Jon Doe', true)
@@ -50,7 +50,7 @@ final class QualifiesForInsuranceTest extends TestCase
     private function mockCompanyRepository(Company $company): MockObject
     {
         $repository = $this->createMock(CompanyRepository::class);
-        $repository->method('get')->with($company->getNumber())->willReturn($company);
+        $repository->method('getCompany')->with($company->getNumber())->willReturn($company);
 
         return $repository;
     }
