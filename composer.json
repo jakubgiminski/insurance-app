@@ -1,0 +1,24 @@
+{
+    "name": "jakub-giminski/insurance-app",
+    "description": "Determine if a company qualifies for insurance.",
+    "require-dev": {
+        "phpunit/phpunit": "^7.3"
+    },
+    "authors": [
+        {
+            "name": "Jakub Giminski",
+            "email": "jakubgiminski@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "InsuranceApp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "InsuranceApp\\Tests\\": "tests/"
+        }
+    },
+    "require": {}
+}
