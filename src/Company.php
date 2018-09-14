@@ -10,7 +10,7 @@ class Company
 
     private $hasInsolvencyHistory;
 
-    public function __construct(int $number, string $directorName, bool $hasInsolvencyHistory = false)
+    public function __construct(int $number, string $directorName, bool $hasInsolvencyHistory)
     {
         $this->number = $number;
         $this->directorName = $directorName;
