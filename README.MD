@@ -15,6 +15,11 @@ composer install
 vendor/bin/phpunit tests --colors --testdox
 ```
 
+### Execute example
+```
+php example/use_case.php
+```
+
 ### Api Documentation
 ```php
 InsuranceApp\QualifiesForInsurance::__invoke(
