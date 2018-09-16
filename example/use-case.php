@@ -4,7 +4,7 @@ namespace Example;
 
 require __DIR__ . '../../vendor/autoload.php';
 
-use InsuranceApp\QualifiesForInsurance;
+use InsuranceApp\InsuranceService;
 
 /**
  * Use Case: Dump if company qualifies for insurance. In this case, company is
@@ -16,4 +16,4 @@ use InsuranceApp\QualifiesForInsurance;
  * false if company has insolvency history.
  */
 $companiesHouseApi = new CompaniesHouseApi(new HttpClient());
-var_dump((new QualifiesForInsurance($companiesHouseApi))(123, 'Jon Doe'));
+var_dump((new InsuranceService($companiesHouseApi))(123, 'Jon Doe'));

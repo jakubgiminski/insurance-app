@@ -4,7 +4,7 @@ namespace InsuranceApp;
 
 use InvalidArgumentException;
 
-final class QualifiesForInsurance
+final class InsuranceService
 {
     private $companyRepository;
 
@@ -13,7 +13,7 @@ final class QualifiesForInsurance
         $this->companyRepository = $companyRepository;
     }
 
-    public function __invoke(int $companyNumber, string $companyDirectorName): bool
+    public function qualifiesForInsurance(int $companyNumber, string $companyDirectorName): bool
     {
         $company = $this->companyRepository->getCompany($companyNumber);
 

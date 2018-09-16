@@ -4,12 +4,12 @@ namespace InsuranceApp\Tests;
 
 use InsuranceApp\Company;
 use InsuranceApp\CompanyRepository;
-use InsuranceApp\QualifiesForInsurance;
+use InsuranceApp\InsuranceService;
 use InvalidArgumentException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-class QualifiesForInsuranceTest extends TestCase
+class InsuranceServiceTest extends TestCase
 {
     /** @test */
     public function throwsExceptionOnDirectorNameMismatch(): void
@@ -20,7 +20,8 @@ class QualifiesForInsuranceTest extends TestCase
 
         $this->expectException(InvalidArgumentException::class);
 
-        (new QualifiesForInsurance($companiesHouseApi))(123, 'John Smith');
+        (new InsuranceService($companiesHouseApi))
+            ->qualifiesForInsurance(123, 'John Smith');
     }
 
     /** @test */
@@ -31,7 +32,8 @@ class QualifiesForInsuranceTest extends TestCase
         );
 
         self::assertTrue(
-            (new QualifiesForInsurance($companiesHouseApi))(123, 'Jon Doe')
+            (new InsuranceService($companiesHouseApi))
+                ->qualifiesForInsurance(123, 'Jon Doe')
         );
     }
 
@@ -43,7 +45,8 @@ class QualifiesForInsuranceTest extends TestCase
         );
 
         self::assertFalse(
-            (new QualifiesForInsurance($companiesHouseApi))(123, 'Jon Doe')
+            (new InsuranceService($companiesHouseApi))
+                ->qualifiesForInsurance(123, 'Jon Doe')
         );
     }
 
